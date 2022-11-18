@@ -4,8 +4,8 @@ const players = {
   data: [
     {
       name: "Marcos",
-      script: async () => {
-        return await MyScript();
+      script: async (scenery, player) => {
+        return await MyScript(scenery, player);
       },
       photo: "./src/images/marcos.jpg",
     }

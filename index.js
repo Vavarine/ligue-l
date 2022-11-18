@@ -108,7 +108,10 @@ const setIndexTitle = () => {
   const $boardItemList = document.querySelectorAll(".board-item-frame")
 
   $boardItemList.forEach(($boardItem, index) => {
-    $boardItem.setAttribute("title", index)
+    const col = Math.floor(index / 6)
+    const row = index % 6
+
+    $boardItem.setAttribute("title", `col: ${col} row: ${row}`)
   })
 }
 

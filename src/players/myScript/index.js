@@ -1,10 +1,16 @@
-const MyScript = (scenery, player) => {
-    
-    return new Promise((resolver) => {
-        // Your code here
+const MyScript = async (scenery, player) => {
+  const response = await fetch('http://localhost:3333/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ scenery, player }),
+  })
+  const { move } = await response.json()
 
-        resolver(Math.floor(Math.random() * 8))
-    }, 100)
+  console.log({ move })
+
+  return move
 }
 
 
